@@ -1,6 +1,11 @@
 # S47_Mayur_Capstone_BrainO
 This is your first repository
 
+
+
+
+Interaction ->
+
 The user will create the account and log in successfully to access the features.
 
 There will be mainly four buttons, the first button is to see the Ranking, the second button is to start the test, the third button is for learning the topic and the fourth button is for creating the to-do list of Qun.
