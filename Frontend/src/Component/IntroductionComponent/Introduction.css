@@ -1,0 +1,53 @@
+.welcome-container {
+    background-color:#f0f0f0; 
+    background-position: 0%;
+    background-size: cover;
+  }
+  
+.welcome-text {
+    font-size: 48px;
+    color: #333; 
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    padding-top: 20% ;
+    text-align: center;
+    margin: 0%;
+  }
+  
+.welcome-text.visible {
+opacity: 1;
+    }
+
+.welcome-x {
+    font-size: 28px;
+    color: #333; 
+    opacity:0;
+    transition: opacity 1.5s ease-in-out;
+    text-align: center;
+    background-color: #f0f0f0; 
+    background-position: 0%;
+    }
+
+.welcome-x.margin {
+    opacity:1;
+  }
+
+.introduction{
+    font-size: 48px;
+    color: #333; 
+    opacity:0;
+    transition: opacity 3s ease-in-out;
+    text-align: center;
+    margin-top: 23.5%;
+    }
+
+.introduction.visible {
+  opacity:1;
+    }
+
+.introduction-text{
+    font-size: 28px;
+    color: #3333339b; 
+    text-align: center;
+    margin-top: 3%;
+    }
