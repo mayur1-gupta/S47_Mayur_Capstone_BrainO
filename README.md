@@ -2,10 +2,6 @@
 This is your first repository
 
 
-
-
-<!--****************************** Interaction **************************->
-
 The user will create the account and log in successfully to access the features.
 
 There will be mainly four buttons, the first button is to see the Ranking, the second button is to start the test, the third button is for learning the topic and the fourth button is for creating the to-do list of Qun.
@@ -28,3 +24,8 @@ UI…… and so on.
  
 <!--****************** frontend server Deployed link ********************-->
 https://braino.netlify.app
+
+ 
+link of a low fid design ---> https://www.figma.com/file/dLG9bxDDfJyXNkEX79xWUG/Untitled?type=design&node-id=0%3A1&mode=design&t=4xehaMtuaWALPtrs-1
+
+
