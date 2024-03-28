@@ -1,53 +1,76 @@
 .welcome-container {
-    background-color:#f0f0f0; 
-    background-position: 0%;
-    background-size: cover;
-  }
-  
+  background-color:#f0f0f0; 
+  background-position: 0%;
+  background-size: cover;
+}
+
 .welcome-text {
-    font-size: 48px;
-    color: #333; 
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    padding-top: 20% ;
-    text-align: center;
-    margin: 0%;
-  }
-  
+  font-size: 48px;
+  color: #333; 
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  padding-top: 20% ;
+  text-align: center;
+  margin: 0%;
+}
+
 .welcome-text.visible {
 opacity: 1;
-    }
-
-.welcome-x {
-    font-size: 28px;
-    color: #333; 
-    opacity:0;
-    transition: opacity 1.5s ease-in-out;
-    text-align: center;
-    background-color: #f0f0f0; 
-    background-position: 0%;
-    }
-
-.welcome-x.margin {
-    opacity:1;
   }
 
+.welcome-x {
+  font-size: 28px;
+  color: #333; 
+  opacity:0;
+  transition: opacity 1.5s ease-in-out;
+  text-align: center;
+  background-color: #f0f0f0; 
+  background-position: 0%;
+  }
+
+.welcome-x.margin {
+  opacity:1;
+}
+
 .introduction{
-    font-size: 48px;
-    color: #333; 
-    opacity:0;
-    transition: opacity 3s ease-in-out;
-    text-align: center;
-    margin-top: 23.5%;
-    }
+  font-size: 48px;
+  color: #333; 
+  opacity:0;
+  transition: opacity 3s ease-in-out;
+  text-align: center;
+  margin-top: 23.5%;
+  }
 
 .introduction.visible {
-  opacity:1;
-    }
+opacity:1;
+  }
 
 .introduction-text{
-    font-size: 28px;
-    color: #3333339b; 
-    text-align: center;
-    margin-top: 3%;
-    }
+  font-size: 28px;
+  color: #3333339b; 
+  text-align: center;
+  margin-top: 3%;
+  }
+
+  .start-btn{
+      font-size: 28px;
+      color: #3333339b; 
+      text-align: center;
+      margin-top: 3%;
+      margin-left: 44.5%;
+      margin-right: 44.5%;
+      background-color: #f0f0f0;
+      border: 2px solid #333;
+      border-radius: 10px;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease;
+      margin-bottom: 100px;
+      }
+      .start-btn:hover {
+      background-color: #333;
+      color: #f0f0f0;
+      }
+  

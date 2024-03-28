@@ -4,7 +4,9 @@ This is your first repository
 
 
 
+
 <!--****************************** Interaction **************************->
+
 
 The user will create the account and log in successfully to access the features.
 
@@ -26,7 +28,7 @@ Low fid design
 Server-side
 UI…… and so on.
  
-
+ 
 <!--****************** frontend server Deployed link ********************-->
 https://braino.netlify.app
 
