@@ -1,7 +1,10 @@
 # S47_Mayur_Capstone_BrainO
 This is your first repository
 
-Interaction ->
+
+
+
+<!--****************************** Interaction **************************->
 
 The user will create the account and log in successfully to access the features.
 
@@ -13,15 +16,21 @@ Qun will appear with four options select the option and click on the next button
 
 On the page, the Result will be displayed and a button for going back to the test page where subjects are displaying 
 
-#AIM→
+
+<!--******************************** AIM *********************************->
 To check the mind-catching power, the website will be taught first by documentation, video and resources and then the test, On the basics of score ranking will be done.  
 
-#RoadMap→
+<!--**************************** RoadMap *********************************-->
 Setting the GitHub
 Low fid design
 Server-side
 UI…… and so on.
  
+
+<!--****************** frontend server Deployed link ********************-->
+https://braino.netlify.app
+
  
 link of a low fid design ---> https://www.figma.com/file/dLG9bxDDfJyXNkEX79xWUG/Untitled?type=design&node-id=0%3A1&mode=design&t=4xehaMtuaWALPtrs-1
+
 
