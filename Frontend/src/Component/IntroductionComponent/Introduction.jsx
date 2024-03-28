@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./Introduction.css"
+import { useNavigate } from "react-router-dom";
 
 function Introduction() {
   const [isVisible, setIsVisible] = useState(false);
-
+  const navigate = useNavigate();
+  
   useEffect(() => {
     const timeout = setTimeout(() => setIsVisible(true), 1000); // Adjust delay as needed
     return () => clearTimeout(timeout);
@@ -33,6 +35,7 @@ function Introduction() {
             Qun will appear with four options select the option and click on the next button after 6 Qun results will 
             be displayed on the basis of the results your ranking will be marked as there is one twist one checkpoint one time.
             <br />
+            <button className="start-btn" onClick={() => navigate("/signup")}>Start</button>
         </p>
       </div>
     </div>
