@@ -9,6 +9,6 @@ const schema = new mongoose.Schema({
     Number : Number
 })
 
-const signupSchema = new mongoose.model("datas",schema)
+const signupSchema = new mongoose.model("userSignUpData",schema)
 
 module.exports = signupSchema
