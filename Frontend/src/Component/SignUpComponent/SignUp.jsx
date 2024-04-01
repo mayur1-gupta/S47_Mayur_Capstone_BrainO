@@ -3,8 +3,11 @@ import "./SignUp.css";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
+import { useForm } from 'react-hook-form';
+
 
 function SignUp() {
+  const { register, handleSubmit,formState: { errors }} = useForm();
   const [cookies, setCookie] = useCookies([
     "Name",
     "Email",
@@ -37,95 +40,108 @@ function SignUp() {
     setNumber(e.target.value);
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    // Set cookies for each form field
-    setCookie("Name", Name);
-    setCookie("Email", Email);
-    setCookie("Password", Password);
-    setCookie("ConfirmPassword", ConfirmPassword);
-    setCookie("Number", Number);
-    console.log("Form submitted successfully!");
-
-    // Create a new FormData object
+  function onSubmit (e) {
+   
 
     const formData = new FormData();
     formData.append("Name", Name);
     formData.append("Email", Email);
     formData.append("Password", Password);
-    formData.append("ConfirmPassword", ConfirmPassword);
+    // formData.append("ConfirmPassword", ConfirmPassword);
     formData.append("Number", Number);
 
-    // Send the FormData object to the backend
     axios
       .post("http://localhost:3000/signup", formData)
       .then((res) => {
         console.log("Response:", res.data);
-        // Handle success if needed
+        setCookie("Name", res.data.Name);
+        setCookie("Email", res.data.Email);
+        setCookie("Password", res.data.Password);
+        setCookie("Number", res.data.Number);
+        console.log("Form submitted successfully!");
         navigate("/Login");
       })
       .catch((err) => {
-        console.error("Error:", err);
-        // Handle error if needed
-      });
+        console.error("Error:", err)
+    });
   }
   return (
       <div className="SignUpPage">
         <div className="Formbackground">
           <h1 className="SignupHeading">SignUp</h1>
-          <form className="form" typeof="submit">
+          <form className="form" typeof="submit" onSubmit={handleSubmit((e)=>onSubmit(e))}>
             <input
               type="text"
               name="name"
               placeholder="Name"
-              onChange={handleName}
               value={Name}
               className="input"
+              {...register("name", { required: true })}
+              onChange={handleName}
             />
+            <br />
+            {errors.name && <span className="SignupError">Name is required</span>}
             <br />
             <input
               type="email"
               name="email"
               placeholder="Email"
-              onChange={handleEmail}
               value={Email}
               className="input"
+              {...register("email", { required: true, pattern: /^\S+@\S+$/i})}
+              onChange={handleEmail}
             />
+            <br />
+            {errors.email?.type === "required" && <span className="SignupError">Email is required</span> 
+                || errors.email?.type === "pattern" && <span className="SignupError">Enter valid email</span>}
             <br />
             <input
               type="password"
               name="password"
               placeholder="Password"
-              onChange={handlePassword}
               value={Password}
               className="input"
+              {...register("password", { required: true, minLength: 4, maxLength: 20, pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,12}$/g})}
+              onChange={handlePassword}
             />
+            <br/>
+            {errors.password?.type=== "required" && <span className="SignupError">Password is required</span>
+                || errors.password?.type === "minLength" && <span className="SignupError">Minimum length should be 4</span>
+                || errors.password?.type === "maxLength" && <span className="SignupError">Maximum length should be 20</span>
+                || errors.password?.type === "pattern" && <span className="SignupError">Enter valid password</span>}
             <br />
             <input
               type="password"
               name="ConfirmPassword"
               placeholder="Confirm Password"
-              onChange={handleConfirmPassword}
               value={ConfirmPassword}
               className="input"
+              {...register("ConfirmPassword", { required: true, })}
+              onChange={handleConfirmPassword}
             />
+            <br />
+            {errors.ConfirmPassword && <span className="ConfirmPasswordSignupError">Confirm Password is required</span> 
+                || errors.ConfirmPassword===Password && <span className="ConfirmPasswordSignupError">Password and Confirm Password should be same</span>}
             <br />
             <input
               type="text"
               name="number"
               placeholder="Number"
-              onChange={handleNumber}
               value={Number}
               className="input"
+              {...register("number", { required: true })}
+              onChange={handleNumber}
             />
             <br />
-            <button className="buttonSubmit" onClick={(e) => handleSubmit(e)}>
+            {errors.number && <span className="SignupError">Number is required</span>}
+            <br />
+            {/* <button className="buttonSubmit" onClick={(e) => handleSubmit(e)}> */}
+            <button className="buttonSubmit" type="submit">
               Submit
             </button>
           </form>
-          <button className="buttonGoogle">With Google</button>
-          <Link to="/login">Login</Link>
+          <button className="buttonGoogle"><Link>Google</Link></button>
+          <button className="buttonGoogle"><Link to="/login">Login</Link></button>
         </div>
       </div>
   );
