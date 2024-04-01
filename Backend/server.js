@@ -10,6 +10,10 @@ app.use(express.json());
 const singup = require("./rout/signupRout")
 app.use("/",singup)
 
+const login = require("./rout/login")
+app.use("/",login)
+
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });

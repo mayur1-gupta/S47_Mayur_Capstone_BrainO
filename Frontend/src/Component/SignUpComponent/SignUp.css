@@ -6,7 +6,7 @@
 
 .input{
     width: 400px;
-    height:60px;
+    height:55px;
     margin: 15px 15px 15px 15px;
     border: 2px solid #333;
     font-size: 20px;
@@ -15,10 +15,6 @@
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;    
 } 
-/* .input:hover{
-    background-color:;
-
-}  */
 
 .buttonSubmit{
     width: 410px;
@@ -36,13 +32,12 @@
 
 .form{
     margin-left:35%;
-    margin-top: 2%;
 } 
 
 .SignupHeading{
-    margin-left: 40%;
+    margin-left: 42%;
     margin-top: 0%;
-    padding-top: 5%;
+    padding-top: 2%;
     color:#333;
     font-size: 80px;
 }
@@ -57,7 +52,7 @@
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     background-color: rgb(255, 255, 255);
-    margin-left:25%;
+    margin-left:19%;
 }
 .buttonGoogle:hover{
     background-color: rgba(0, 217, 255, 0.456);
@@ -65,8 +60,8 @@
 }
 
 .buttonLogin{
-    width: 310px;
-    height:60px;
+    width: 200px;
+    height:50px;
     margin: 10px 10px 10px 10px;
     border: 2px solid #333;
     font-size: 20px;
@@ -78,4 +73,15 @@
 .buttonLogin:hover{
     background-color: rgba(0, 217, 255, 0.456);
     color: #333;
+}
+
+.SignupError{
+    color: red;
+    font-size: 18px;
+    margin-left: 16%;
+}
+.ConfirmPasswordSignupError{
+    color: red;
+    font-size: 18px;
+    margin-left: 12%;
 }
