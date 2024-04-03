@@ -47,7 +47,6 @@ function SignUp() {
     formData.append("Name", Name);
     formData.append("Email", Email);
     formData.append("Password", Password);
-    // formData.append("ConfirmPassword", ConfirmPassword);
     formData.append("Number", Number);
 
     axios

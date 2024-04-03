@@ -13,6 +13,15 @@ app.use("/",singup)
 const login = require("./rout/login")
 app.use("/",login)
 
+const home = require("./rout/home")
+app.use("/",home)
+
+const profile = require("./rout/profile")
+app.use("/",profile)
+
+// const editProfile = require("./rout/editProfile")
+// app.use("/",editProfile)
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
