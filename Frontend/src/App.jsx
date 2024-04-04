@@ -5,7 +5,7 @@ import SignUp from './Component/SignUpComponent/SignUp'
 import Login from './Component/LoginComponent/Login'
 import Home from './Component/HomeComponent/Home'
 import Profile from './Component/ProfileComponent/Profile'
-// import Edit_Profile from './Component/EditProfileComponent/Edit_Profile'
+import Edit_Profile from './Component/EditProfileComponent/Edit_Profile'
 function App() {
   return (
       <>
@@ -15,7 +15,7 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/home/:id" element={<Home/>}/>
           <Route path="/profile/:id" element={<Profile/>}/>
-          {/* <Route path="/editprofile/:id" element={<Edit_Profile/>}/> */}
+          <Route path="/editprofile/:id" element={<Edit_Profile/>}/>
         </Routes>
       </>
   )
