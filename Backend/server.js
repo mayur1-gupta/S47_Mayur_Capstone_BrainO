@@ -19,8 +19,8 @@ app.use("/",home)
 const profile = require("./rout/profile")
 app.use("/",profile)
 
-// const editProfile = require("./rout/editProfile")
-// app.use("/",editProfile)
+const editProfile = require("./rout/editProfile")
+app.use("/",editProfile)
 
 
 app.listen(port, () => {

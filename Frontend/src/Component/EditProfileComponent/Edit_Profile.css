@@ -1,0 +1,76 @@
+.Edit-profile-container{
+    display: flex;
+ }
+ .Eidt-profile-heading{
+    margin:0%;
+    padding:0%;
+    font-size: 11vh;
+    color:#333;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: center;
+ }
+ 
+ 
+ .profile_Img{
+    background-color: rgb(100, 100, 100);
+    width: 60vh;
+    height: 57vh;
+    margin-top:9vh;
+    margin-left:5vh;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+ }
+ 
+ 
+ .profile_Img:hover {
+    transform: scale(1.1);
+  }
+ 
+ 
+ .EditProfile{
+   display: flex;
+   flex-direction: column;
+   margin-top: 2vh;
+   margin-left: 20vh;
+ }
+ .Edit_tag_head{
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+ }
+ 
+ 
+ .Edit_tag_Input{
+    height: 8vh;
+    width: 60vh;
+    border: 2px solid #333;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+ }
+ .EditImg{
+    height: 8vh;
+    width: 60vh;
+    margin-top: 2vh;
+    border: 2px solid #333;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+    /* font-family: 'Courier New', Courier, monospace; */
+ }
+ .Edit_SubmitBtn{
+    height: 8vh;
+    width: 60vh;
+    margin-top: 3.5vh;
+    border: 2px solid #26ff00;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: #85f57198;
+ }
+ 
