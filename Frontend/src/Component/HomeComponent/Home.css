@@ -1,0 +1,166 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.HomeContainer{
+    background-color:#333333;
+    background-position: 0%;
+    height: 11vh;
+    padding:0%;
+}
+.ProfileBt{
+    width: 150px;
+    height: 45px;
+    margin: 15px 15px 15px 15px;
+    border: 2px solid #333;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-left:5vw;
+    margin-top: 20px;
+}
+.QuestionBt{
+    width: 150px;
+    height: 45px;
+    margin: 15px 15px 15px 15px;
+    border: 2px solid #333;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left:5vw;
+    margin-top: 20px;
+}
+.LogoutBt{
+    width: 150px;
+    height: 45px;
+    margin: 15px 15px 15px 15px;
+    border: 2px solid #333;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left:5vw;
+    margin-top: 20px;
+}
+.RankingBt{
+    width: 150px;
+    height: 45px;
+    margin: 15px 15px 15px 15px;
+    border: 2px solid #333;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left:5vw;
+    margin-top: 20px;
+}
+.CreateBt{
+    width: 150px;
+    height: 45px;
+    margin: 15px 15px 15px 15px;
+    border: 2px solid #333;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left:5vw;
+    margin-top: 20px;
+}
+.StartBtn{
+    width: 150px;
+    height: 45px;
+    margin: 15px 15px 15px 15px;
+    border: 2px solid #333;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left:5vw;
+    margin-top: 20px;
+}
+.RankingBtn{
+    width: 150px;
+    height: 45px;
+    margin: 15px 15px 15px 15px;
+    border: 2px solid #333;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left:75vw;
+    margin-top: 20px;
+}
+.CreateBtn{
+    width: 150px;
+    height: 45px;
+    margin: 15px 15px 15px 15px;
+    border: 2px solid #333;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left:0vw;
+    margin-top: 20px;
+}
+.SubjectContainer{
+    background-color:#c3d56a5d;
+    background-position: 0%;
+    border: 2px solid #333;
+    height: 20vh;
+    width: 60vh;
+    margin-top: 65px;
+    margin-left: 30px;
+}
+
+.SubjectContaine1{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;  
+}
+.SubjectContainer2{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.balth1,.balth2,.balth3,.balth4,.balth5{
+    height: 5vh;
+    width: 2.5vh;
+    background-color: #213635b1;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+.SubjectHeading{
+    font-size: 60px;
+    color:#333;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+.LearnBtn{
+    height: 5vh;
+    width: 10vh;
+    margin-left:22vh;
+}
+
+.StartBtn{
+    height: 5vh;
+    width: 10vh;
+    margin-left: 20.5vh;
+}
+.SubjectHeading3{
+    font-size: 50px;
+    color:#333;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.LearnBtn1{
+    width: 150px;
+    height: 45px;
+    margin: 15px 15px 15px 15px;
+    border: 2px solid #333;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left:5vw;
+    margin-top: 20px;
+}

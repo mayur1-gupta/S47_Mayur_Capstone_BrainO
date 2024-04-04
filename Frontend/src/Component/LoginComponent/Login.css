@@ -1,0 +1,51 @@
+.login-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100vh;
+    background-color: #f0f0f0;
+    background-position: 0%;
+    background-size: cover;
+}
+.login-text{
+    font-size: 100px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+.input_login_email{
+    width: 400px;
+    height:55px;
+    margin: 15px 15px 15px 15px;
+    border: 2px solid #333;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;    
+}
+.input_login_password{
+    width: 400px;
+    height:55px;
+    margin: 15px 15px 15px 15px;
+    border: 2px solid #333;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.login-btn{
+    width: 410px;
+    height:60px;
+    margin: 10px 10px 10px 10px;
+    border: 2px solid #333;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.login-btn:hover{
+    background-color: rgba(0, 217, 255, 0.456);
+    color: #333;
+}

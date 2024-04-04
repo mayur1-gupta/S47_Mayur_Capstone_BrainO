@@ -1,0 +1,87 @@
+.SignUpPage{
+    background-color:#f0f0f0;
+    background-position: 0%;
+    height: 100vh;
+}
+
+.input{
+    width: 400px;
+    height:55px;
+    margin: 15px 15px 15px 15px;
+    border: 2px solid #333;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;    
+} 
+
+.buttonSubmit{
+    width: 410px;
+    height:60px;
+    margin: 10px 10px 10px 10px;
+    border: 2px solid #333;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.buttonSubmit:hover{
+    background-color: rgb(79, 244, 115);
+}
+
+.form{
+    margin-left:35%;
+} 
+
+.SignupHeading{
+    margin-left: 42%;
+    margin-top: 0%;
+    padding-top: 2%;
+    color:#333;
+    font-size: 80px;
+}
+
+.buttonGoogle{
+    width: 310px;
+    height:60px;
+    margin: 10px 10px 10px 10px;
+    border: 2px solid #333;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    margin-left:19%;
+}
+.buttonGoogle:hover{
+    background-color: rgba(0, 217, 255, 0.456);
+    color: #333;
+}
+
+.buttonLogin{
+    width: 200px;
+    height:50px;
+    margin: 10px 10px 10px 10px;
+    border: 2px solid #333;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+}
+.buttonLogin:hover{
+    background-color: rgba(0, 217, 255, 0.456);
+    color: #333;
+}
+
+.SignupError{
+    color: red;
+    font-size: 18px;
+    margin-left: 16%;
+}
+.ConfirmPasswordSignupError{
+    color: red;
+    font-size: 18px;
+    margin-left: 12%;
+}
