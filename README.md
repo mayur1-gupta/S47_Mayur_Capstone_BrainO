@@ -3,7 +3,9 @@ This is your first repository
 
 link of a low fid design ---> https://www.figma.com/file/dLG9bxDDfJyXNkEX79xWUG/Untitled?type=design&node-id=0%3A1&mode=design&t=4xehaMtuaWALPtrs-1
 
+
 <!--****************************** Interaction **************************->
+
 
 The user will create the account and log in successfully to access the features.
 
@@ -25,5 +27,11 @@ Low fid design
 Server-side
 UI…… and so on.
  
+ 
 <!--****************** frontend server Deployed link ********************-->
 https://braino.netlify.app
+
+ 
+link of a low fid design ---> https://www.figma.com/file/dLG9bxDDfJyXNkEX79xWUG/Untitled?type=design&node-id=0%3A1&mode=design&t=4xehaMtuaWALPtrs-1
+
+
