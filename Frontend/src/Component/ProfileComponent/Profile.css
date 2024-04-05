@@ -1,0 +1,138 @@
+.profile-container{
+    background-color: #f0f0f0;
+    background-position: 0%;
+    height: 100vh;
+    /* padding-top: 10%; */
+    /* text-align: center; */
+    padding:0%;
+}
+
+.profileDev{
+    background-color: #333; 
+}
+.profile-heading{
+    margin:0%;
+    padding:0%;
+    font-size: 11vh;
+    color:#fdfdfd;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: center;
+}
+.flex{
+    display:flex;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+.profileImg{
+    width: 60vh;
+    height: 57vh;
+    margin-top:9vh;
+    margin-left:5vh;
+    background-color: rgb(100, 100, 100);
+    border-radius: 50%; 
+    /* transition: transform 0.3s ease; Smooth transition on hover */
+}
+
+/* 
+.circle:hover {
+    transform: scale(1.2); /* Scale up the circle on hover */ 
+
+
+.profileInfo{
+   
+}
+.NameInput{
+    height: 8vh;
+    width: 55vh;
+    margin: 10vh 2vh 4vh 20vh;
+    border: 2px solid #333;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.EmailInput{
+    height: 8vh;
+    width: 55vh;
+    margin: 2vh 2vh 4vh 20vh;
+    border: 2px solid #333;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.NumberInput{
+    height: 8vh;
+    width: 55vh;
+    margin: 2vh 2vh 4vh 20vh;
+    border: 2px solid #333;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.EditBtn{
+    height: 10vh;
+    width: 30vh;
+    margin-left: 45%;
+    border: 2px solid #333;
+    font-size: 30px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: rgb(132, 231, 125);
+    color: #333;
+    cursor: pointer;
+}
+.NameInput2{
+    height: 8vh;
+    width: 55vh;
+    margin-left: 5vh;
+    border: 2px solid #333;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.AgeE{
+    height: 8vh;
+    width: 55vh;
+    margin: 2vh 2vh 4vh 20vh;
+    border: 2px solid #333;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.LogoutBtn{
+    height: 10vh;
+    width: 35vh;
+    margin-left: 5vh;
+    border: 2px solid #333;
+    font-size: 30px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color:#333;
+    color: #f0f0f0;
+    cursor: pointer;
+}
+.HomeBtn{
+    height: 10vh;
+    width: 35vh;
+    margin-left: 5vh;
+    border: 2px solid #333;
+    font-size: 30px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color:#333;
+    color: #f0f0f0;
+}

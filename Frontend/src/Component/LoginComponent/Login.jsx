@@ -7,7 +7,6 @@ function Login() {
     const [Email, setEmail] = useState('')
     const [Password, setPassword] = useState('')
 
-
     const navigate = useNavigate();
 
     const hendleEmail = (e) => {
@@ -27,12 +26,13 @@ function Login() {
             })
             .then((res) => {
                 console.log("Response:", res.data);
-                if (res.data === "Login Successful") {
-                        navigate('/Home')   
+                if(res.data.data){
+                    navigate(`/Home/${res.data.data._id}`)                    
+                    localStorage.setItem("id", res.data.data._id)
                 }
-                else {
+                else{
                     alert("Login Failed")
-                }
+                }                
             })
             .catch((err) => {
                 console.log("Error:", err);
