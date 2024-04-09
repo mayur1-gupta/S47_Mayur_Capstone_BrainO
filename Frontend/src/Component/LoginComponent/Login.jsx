@@ -20,7 +20,7 @@ function Login() {
     const hendleLogin = () => {
             localStorage.setItem("Email", Email)
             localStorage.setItem("Password", Password)
-            axios.post("http://localhost:3000/login", {
+            axios.post("http://localhost:300/login", {
                 Email: Email,
                 Password: Password
             })

@@ -22,6 +22,20 @@ app.use("/",profile)
 const editProfile = require("./rout/editProfile")
 app.use("/",editProfile)
 
+const createQun = require("./rout/createQun")
+app.use("/",createQun)
+
+const qunList = require("./rout/AllQunList")
+app.use("/",qunList)
+
+const userQunList = require("./rout/usreQunList")
+app.use("/",userQunList)
+
+const deleteQun = require("./rout/deleteQun")
+app.use("/",deleteQun)
+
+const updateQun = require("./rout/updateQun")
+app.use("/",updateQun)
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
