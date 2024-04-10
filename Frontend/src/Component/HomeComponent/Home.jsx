@@ -20,10 +20,11 @@ function Home(){
         <div>
             <div className="HomeContainer">
                 <button onClick={() => navigate(`/profile/${id}`)} className="ProfileBt">Profile</button>
-                <button onClick={() => navigate('/QuestionList')} className="QuestionBt">Question List</button>
+                <button onClick={() => navigate(`/qunList/${id}`)} className="QuestionBt">Question List</button>
                 <button onClick={() => navigate('/login')} className="LogoutBt">Logout</button>
-                <button onClick={() => navigate('/Ranking')} className="RankingBt">Ranking</button>
-                <button onClick={() => navigate('/QunCreate')} className="CreateBt">Create</button>
+                <button onClick={() => navigate('/ranking')} className="RankingBt">Ranking</button>
+                <button onClick={() => navigate(`/createQun/${id}`)} className="CreateBt">Create</button>
+                <button onClick={() => navigate(`/yourQun/${id}`)} className="YourQunBt">Your Qun</button>
             </div>    
             <div className="SubjectContainer">
                 <div className="SubjectContaine1">

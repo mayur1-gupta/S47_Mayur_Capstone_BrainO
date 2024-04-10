@@ -50,7 +50,7 @@ function SignUp() {
     formData.append("Number", Number);
 
     axios
-      .post("http://localhost:3000/signup", formData)
+      .post("http://localhost:300/signup", formData)
       .then((res) => {
         console.log("Response:", res.data);
         setCookie("Name", res.data.Name);
