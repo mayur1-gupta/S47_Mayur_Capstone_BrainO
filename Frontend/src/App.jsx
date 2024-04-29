@@ -10,6 +10,8 @@ import CreateQun from './Component/Qun/CreateQun/Create'
 import QunList from './Component/Qun/QunList/All_Qun_List'
 import UserQunList from './Component/Qun/QunList/User_Qun_List'
 import Update_list from './Component/Qun/UpdateQun/Update_list';
+import Quiz from './Component/Starting_Quiz/Quiz';
+import Result from './Component/Result/Result'; 
 function App() {
   return (
       <>
@@ -24,6 +26,8 @@ function App() {
           <Route path='/qunList/:id' element={<QunList/>}/>
           <Route path='/yourQun/:id' element={<UserQunList/>}/>
           <Route path='/updatequn/:id' element={<Update_list/>}/>
+          <Route path='/quiz/:id' element={<Quiz/>}/>
+          <Route path='/result/:id' element={<Result/>}/>
         </Routes>
       </>
   )

@@ -37,7 +37,7 @@ function Update_list() {
         console.log("Response:", res.data);
         setQun(res.data.Qun);
         setAnswer(res.data.Answer);
-        navigate(`/yourqun/${localStorage.getItem("Email")}`);
+        navigate(`/yourqun/${localStorage.getItem("id")}`);
         window.location.reload();
         console.log(res.data);
       })
