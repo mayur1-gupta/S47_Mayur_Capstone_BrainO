@@ -37,6 +37,12 @@ app.use("/",deleteQun)
 const updateQun = require("./rout/updateQun")
 app.use("/",updateQun)
 
+const quiz = require("./rout/Quiz")
+app.use("/",quiz)
+
+const MCQResult = require("./rout/MCQResult")
+app.use("/",MCQResult)
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });

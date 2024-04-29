@@ -37,7 +37,7 @@ function Home(){
                     <div className="balth3"></div>
                     <div className="balth4"></div>
                     <div className="balth5"></div>
-                    <button className="StartBtn" onClick={() => navigate('/Question')}>Start</button>
+                    <button className="StartBtn" onClick={() => navigate(`/quiz/${id}`)}>Start</button>
                 </div>
             </div>  
 
