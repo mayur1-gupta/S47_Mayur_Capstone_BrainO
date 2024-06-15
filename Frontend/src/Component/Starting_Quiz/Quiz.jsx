@@ -2,103 +2,121 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-// import Result from '../Result/Result';
 
-function Quiz() {
-  const [questions, setQuestions] = useState([]);
+function Quizz() {
   const { id } = useParams();
-  const [QunNumber, setQunNumber] = useState(0);
-  const [Answer, setAnswer] = useState("");
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [randomIndices, setRandomIndices] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null);
   const [score, setScore] = useState(0);
   const navigate = useNavigate();
-  const totalQuestions = 0;
 
   useEffect(() => {
-    // Correct port number
-     axios.get(`http://localhost:300/quiz/${id}`)
-      .then((res) => {
-        console.log("Questions:", res.data);
-        setQuestions(res.data);
-        setAnswer(res.data[0].js[QunNumber].Answer);
-      })
-      .catch((err) => {
-        console.error("Error fetching questions:", err);
-      });
-  },[QunNumber]);
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`http://localhost:300/quiz/${id}`);
+        if (res && res.data.length > 1) {
+          setData(res.data[1].javascript);
+          setLoading(false);
+        } else {
+          setError("Invalid data structure");
+          setLoading(false);
+        }
+      } catch (err) {
+        console.error("Error fetching data:", err);
+        setError("Failed to fetch data");
+        setLoading(false);
+      }
+    };
 
+    fetchData();
+  }, [id]);
 
-  // Correcting repeated increments and ensuring answer checking
-  const handleOption = (option) => {
-    if (Answer === option) {
-      setScore(score + 1);
+  useEffect(() => {
+    if (data.length > 0) {
+      const indices = new Set();
+      const testLength = data[0]?.test?.length || 0;
+      while (indices.size < 5 && testLength > 0) {
+        const randomN = Math.floor(Math.random() * testLength);
+        indices.add(randomN);
+      }
+
+      setRandomIndices(Array.from(indices));
     }
-    if (QunNumber < questions[0].js.length-1) {
-      setQunNumber(QunNumber + 1);
-      setAnswer(questions[0].js[QunNumber + 1].Answer);
-       var totalQuestions = questions[0].js.length; 
+  }, [data]);
 
-    } else {
-      handleSubmit();
+  const handleNext = () => {
+    if (currentIndex < randomIndices.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
+      setSelectedOption(null); // Reset selected option for the next question
     }
   };
 
-  const handleNext = () => {
-    // Correcting string-to-integer comparison
-    if (QunNumber < 4) {
-      setQunNumber(QunNumber + 1);
-    } else {
-      alert("Already on the last question");
+  const handleOption = (optionName) => {
+    const questionIndex = randomIndices[currentIndex];
+    const correctAnswer = data[0]?.test?.[questionIndex]?.Answer;
+    console.log("Correct answer:", correctAnswer);
+
+
+    setSelectedOption(optionName);
+    console.log("Selected option:", optionName);
+    if (currentIndex >= 4){
+      handleSubmit();
     }
+    if (optionName === correctAnswer) { 
+      setScore((prev) => prev + 1);
+      console.log("Correct! New score:", score + 1);
+    }
+    setTimeout(handleNext, 300);
   };
 
   const handleSubmit = () => {
-    alert("Quiz Completed");
-    navigate(`/result/${id}`,{
-      state: { 
-        score: score,
-        totalQun: questions[0].js.length,
-      },
-    });
+
+    navigate(`/Result/${id}`, {Sanding_Result});
+    console.log("Quiz submitted. Final score:", score);
+    // Further actions, like sending data to a server or showing a summary
   };
-console.log(totalQuestions);
-console.log(Answer);
-  
+
+  const Sanding_Result = {
+    Email : localStorage.getItem("Email"),
+    Score: score,
+    TotalQun: 5,
+    correctAnswers: score,
+    wrongAnswers: 5 - score,
+  }
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (data.length === 0 || randomIndices.length === 0) {
+    return <div>No data available.</div>;
+  }
+
+  const questionIndex = randomIndices[currentIndex];
+  const question = data[0]?.test?.[questionIndex]; // Get the current question
+
   return (
     <div>
       <h1>Quiz Time</h1>
-      <h2>Question Number: {QunNumber + 1}</h2>
-      <h2>Score: {score}</h2>
-
-      {questions.length > 0 && (
-        <div>
-          {/* Ensure valid QunNumber before accessing */}
-          {QunNumber < questions[0].js.length && (
-            <div>
-              <p>{questions[0].js[QunNumber].Question}</p>
-              <button onClick={() => handleOption("OptionA")}>
-                {questions[0].js[QunNumber].OptionA}
-              </button>
-              <button onClick={() => handleOption("OptionB")}>
-                {questions[0].js[QunNumber].OptionB}
-              </button>
-              <button onClick={() => handleOption("OptionC")}>
-                {questions[0].js[QunNumber].OptionC}
-              </button>
-              <button onClick={() => handleOption("OptionD")}>
-                {questions[0].js[QunNumber].OptionD}
-              </button>
-              <br />
-              <button onClick={handleNext}>Next</button>
-              <button onClick={handleSubmit}>Submit</button>
-            </div>
-          )}
-        </div>
-      )}
-        {/* <div> */}
-           {/* <Result score={score}/> */}
-        {/* </div> */}
+      <h2>Question {currentIndex + 1}</h2>
+      <h3>{question?.Q || "Question not found"}</h3>
+      <p onClick={() => handleOption("OptionA")}>{question?.OptionA || "Option A not found"}</p>
+      <p onClick={() => handleOption("OptionB")}>{question?.OptionB || "Option B not found"}</p>
+      <p onClick={() => handleOption("OptionC")}>{question?.OptionC || "Option C not found"}</p>
+      <p onClick={() => handleOption("OptionD")}>{question?.OptionD || "Option D not found"}</p>
+      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleNext}>Next</button>
+      <div>Your current score: {score}</div> {/* Display the current score */}
     </div>
   );
 }
 
-export default Quiz;
+export default Quizz;
