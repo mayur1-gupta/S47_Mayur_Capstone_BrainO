@@ -1,7 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 const app = express()
-const port =3000
+const port =300
 
 
 app.use(cors())
@@ -19,9 +19,29 @@ app.use("/",home)
 const profile = require("./rout/profile")
 app.use("/",profile)
 
-// const editProfile = require("./rout/editProfile")
-// app.use("/",editProfile)
+const editProfile = require("./rout/editProfile")
+app.use("/",editProfile)
 
+const createQun = require("./rout/createQun")
+app.use("/",createQun)
+
+const qunList = require("./rout/AllQunList")
+app.use("/",qunList)
+
+const userQunList = require("./rout/usreQunList")
+app.use("/",userQunList)
+
+const deleteQun = require("./rout/deleteQun")
+app.use("/",deleteQun)
+
+const updateQun = require("./rout/updateQun")
+app.use("/",updateQun)
+
+const quiz = require("./rout/Quiz")
+app.use("/",quiz)
+
+const MCQResult = require("./rout/MCQResult")
+app.use("/",MCQResult)
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

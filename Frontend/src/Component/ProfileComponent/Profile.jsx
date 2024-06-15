@@ -17,7 +17,7 @@ function Profile() {
 //   };
  const {id} = useParams()
     useEffect(() =>{
-        axios.get(`http://localhost:3000/profile/${id}`)
+        axios.get(`http://localhost:300/profile/${id}`)
         .then((res) => {
             setName(res.data.Name);
             setEmail(res.data.Email);
@@ -55,6 +55,7 @@ function Profile() {
       <div>
         <button className='EditBtn' onClick={() => navigate(`/editprofile/${localStorage.getItem('id')}`)}>Edit</button>
         <button className="LogoutBtn" onClick={() => navigate('/login')}>Logout</button>
+        <button className="HomeBtn" onClick={() => navigate(`/home/${localStorage.getItem("id")}`)}>Home</button>
       </div>
     </div>
   )
