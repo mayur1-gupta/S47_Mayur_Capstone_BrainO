@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './Profile.css'
-import { useNavigate } from 'react-router-dom'
-import { useParams } from 'react-router-dom';
+import { useNavigate,useParams } from 'react-router-dom'
+import { useCookies } from 'react-cookie';
 
 
 function Profile() {
@@ -11,25 +11,42 @@ function Profile() {
   const [number, setNumber] = useState('');
   const [age, setAge] = useState('');
   const [photo, setPhoto] = useState('');
-    const navigate=useNavigate()
-//  const handlePhotoChange = (event) => {
-//     setPhoto(event.target.files[0]);
-//   };
- const {id} = useParams()
-    useEffect(() =>{
-        axios.get(`http://localhost:300/profile/${id}`)
-        .then((res) => {
+  const [cookies, setCookie, removeCookie] = useCookies(['token']);
+  const navigate=useNavigate()
+  const {id} = useParams()
+
+    useEffect(() => {
+      const fetchProfile = async () => {
+        try {
+          const res = await axios.get(`http://localhost:300/profile/${id}`, {
+            headers: {
+              Authorization: `Bearer ${cookies.token}`,
+            },
+          });
+          if (res.data === "notAuthorization") {
+            removeCookie('token');
+            navigate("/login");
+          } else {
             setName(res.data.Name);
             setEmail(res.data.Email);
             setNumber(res.data.Number);
             setAge(res.data.Age);
             setPhoto(res.data.Photo);
-        })  
-        .catch((err) => {
-            console.log(err);
-        })
-    })
-
+          }
+        } catch (err) {
+          if (err.response && err.response.status === 403) {
+            console.error("Authorization error: ", err.response.data);
+            removeCookie('token');
+            navigate('/login');
+          } else {
+            console.error(err);
+          }
+        }
+      };
+  
+      fetchProfile();
+    }, [id, cookies.token, navigate, removeCookie]);
+  
 
   return (
     <div className="profile-container">
@@ -62,3 +79,5 @@ function Profile() {
 }
 
 export default Profile
+
+
