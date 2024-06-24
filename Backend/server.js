@@ -3,9 +3,10 @@ const cors = require("cors")
 const app = express()
 const port =300
 
-
 app.use(cors())
 app.use(express.json()); 
+
+
 
 const singup = require("./rout/signupRout")
 app.use("/",singup)

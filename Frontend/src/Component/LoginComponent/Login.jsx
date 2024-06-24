@@ -2,10 +2,14 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import "./Login.css"
 import {useNavigate} from "react-router-dom"
+import { useCookies } from "react-cookie";
 
 function Login() {
     const [Email, setEmail] = useState('')
     const [Password, setPassword] = useState('')
+    const [cookies,setCookie] = useCookies([
+        "Token",
+    ])
 
     const navigate = useNavigate();
 
@@ -29,6 +33,8 @@ function Login() {
                 if(res.data.data){
                     navigate(`/Home/${res.data.data._id}`)                    
                     localStorage.setItem("id", res.data.data._id)
+                    setCookie("token" ,res.data.token)
+
                 }
                 else{
                     alert("Login Failed")
@@ -38,8 +44,8 @@ function Login() {
                 console.log("Error:", err);
             })
         }
+        
 
-    
 
 
   return (
