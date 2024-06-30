@@ -1,20 +1,15 @@
 const express = require("express")
-const cors = require("cors")
 const app = express()
-const port =300
-
+const cors = require("cors")
 app.use(cors())
 app.use(express.json()); 
-
-const express = require("express")
-const login = express()
-login.use(express.json())
+const port =300
 const mongoose = require("../cannectors/mongoDB")
 const singupSchema = require("../module/SignUpSchema")
 const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken")
 
-login.post("/login", async(req, res) => { 
+app.post("/app", async(req, res) => { 
     // console.log("FormData:", req.body);
     const user = await singupSchema.findOne({"Email":req.body.Email})
     try {
