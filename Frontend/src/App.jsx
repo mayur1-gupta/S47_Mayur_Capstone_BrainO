@@ -13,6 +13,7 @@ import Update_list from './Component/Qun/UpdateQun/Update_list';
 import Quiz from './Component/Starting_Quiz/Quiz';
 import Result from './Component/Result/Result'; 
 import Quizz from './Component/Starting_Quiz/Quizz';
+import Uplads from './Component/ProfileComponent/Uploads';
 function App() {
   return (
       <>
@@ -30,6 +31,7 @@ function App() {
           <Route path='/quiz/:id' element={<Quiz/>}/>
           <Route path='/result/:id' element={<Result/>}/>
           <Route path='/quizz/:id' element={<Quizz/>}/>
+          <Route path='/upload/:id' element={<Uplads/>}/>
         </Routes>
       </>
   )

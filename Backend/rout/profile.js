@@ -1,10 +1,10 @@
 const express = require("express")
 const signupSchema = require("../module/SignUpSchema")
+const authenticateToken = require('../middleware/authMiddleware');
 const profile = express()
 profile.use(express.json())
 const cors = require('cors');
 profile.use(cors()); 
-const authenticateToken = require('../middleware/authMiddleware');
 
 
 profile.get("/profile/:id",authenticateToken,async (req,res)=>{
