@@ -6,7 +6,8 @@ const schema = new mongoose.Schema({
     Email : String,
     Password : String,
     ConfirmPassword : String,
-    Number : Number
+    Number : Number,
+    profileImage: String,
 })
 
 const signupSchema = new mongoose.model("userSignUpData",schema)

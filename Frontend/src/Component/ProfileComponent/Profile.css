@@ -27,11 +27,12 @@
 }
 .profileImg{
     width: 60vh;
-    height: 57vh;
+    height: 60vh;
     margin-top:9vh;
     margin-left:5vh;
     background-color: rgb(100, 100, 100);
     border-radius: 50%; 
+    
     /* transition: transform 0.3s ease; Smooth transition on hover */
 }
 
@@ -136,3 +137,4 @@
     background-color:#333;
     color: #f0f0f0;
 }
+

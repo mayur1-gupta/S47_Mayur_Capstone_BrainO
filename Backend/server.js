@@ -6,6 +6,7 @@ const port =300
 app.use(cors())
 app.use(express.json()); 
 
+const path = require('path');
 
 
 const singup = require("./rout/signupRout")
@@ -43,6 +44,10 @@ app.use("/",quiz)
 
 const MCQResult = require("./rout/MCQResult")
 app.use("/",MCQResult)
+
+const uploads = require("./rout/upload")
+app.use('/uploads/', express.static(path.join(__dirname, 'uploads')));
+app.use("/",uploads)
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
