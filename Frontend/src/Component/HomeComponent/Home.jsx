@@ -26,7 +26,8 @@ function Home(){
                 <button onClick={() => navigate('/ranking')} className="RankingBt">Ranking</button>
                 <button onClick={() => navigate(`/createQun/${id}`)} className="CreateBt">Create</button>
                 <button onClick={() => navigate(`/yourQun/${id}`)} className="YourQunBt">Your Qun</button>
-            </div>    
+            </div>   
+             
             <div className="SubjectContainer">
                 <div className="SubjectContaine1">
                     <h3 className="SubjectHeading">JScript</h3>
