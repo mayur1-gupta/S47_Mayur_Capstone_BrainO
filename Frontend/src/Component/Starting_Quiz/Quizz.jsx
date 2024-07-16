@@ -18,7 +18,7 @@ function Quizz() {
 
     useEffect( () => {
         axios
-        .get(`http://localhost:300/quiz/${id}`)
+        .get(`https://s47-mayur-capstone-braino-1.onrender.com/quiz/${id}`)
         .then((res) => {
            setdata(res.data[1].javascript);
          })
@@ -28,7 +28,7 @@ function Quizz() {
 
         const fetchData = async () => {
         try {
-            const res = await axios.get(`http://localhost:300/quiz/${id}`);
+            const res = await axios.get(`https://s47-mayur-capstone-braino-1.onrender.com/quiz/${id}`);
             if (res && res.data.length > 1) {
                 setdata(res.data[1].javascript[level]); // Update state with fetched data
               }
