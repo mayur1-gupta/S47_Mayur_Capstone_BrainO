@@ -21,7 +21,7 @@ function Profile() {
     useEffect(() => {
       const fetchProfile = async () => {
         try {
-          const res = await axios.get(`http://localhost:300/profile/${id}`, {
+          const res = await axios.get(`https://s47-mayur-capstone-braino.onrender.com/profile/${id}`, {
             headers: {
               Authorization: `Bearer ${cookies.token}`,
             },

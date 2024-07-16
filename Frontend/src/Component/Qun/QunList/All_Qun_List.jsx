@@ -7,7 +7,7 @@ function QuestionList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:300/qunList")
+      .get("https://s47-mayur-capstone-braino.onrender.com/qunList")
       .then((res) => {
         console.log("Response:", res.data);
         const updatedList = res.data.map(item => ({ ...item, love_count: 0, like_count: 0, dislike_count: 0 }));

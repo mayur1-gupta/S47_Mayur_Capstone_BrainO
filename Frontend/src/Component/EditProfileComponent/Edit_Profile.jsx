@@ -14,7 +14,7 @@ function Edit_Profile() {
 
  useEffect(() => {
    axios
-     .get(`http://localhost:300/editprofile/${id}`)
+     .get(`https://s47-mayur-capstone-braino.onrender.com/editprofile/${id}`)
      .then((res) => {
        console.log(res.data);
        setName(res.data.Name);
@@ -36,7 +36,7 @@ function Edit_Profile() {
    console.log(formData);
    try {
      axios
-       .put(`http://localhost:300/editprofile/${id}`, formData)
+       .put(`https://s47-mayur-capstone-braino.onrender.com/editprofile/${id}`, formData)
        .then((res) => {
          console.log("Updated Data", res.data);
          navigate(`/Profile/${id}`);

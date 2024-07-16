@@ -24,7 +24,7 @@ function Login() {
     const hendleLogin = () => {
             localStorage.setItem("Email", Email)
             localStorage.setItem("Password", Password)
-            axios.post("http://localhost:300/login", {
+            axios.post("https://s47-mayur-capstone-braino.onrender.com/login", {
                 Email: Email,
                 Password: Password
             })

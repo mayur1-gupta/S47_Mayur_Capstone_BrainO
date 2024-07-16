@@ -10,7 +10,7 @@ function QuestionList() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:300/yourQun/${localStorage.getItem("Email")}`)
+      .get(`https://s47-mayur-capstone-braino.onrender.com/yourQun/${localStorage.getItem("Email")}`)
       .then((res) => {
         console.log("Response:", res.data);
         console.log(localStorage.getItem("Email"));
@@ -23,7 +23,7 @@ function QuestionList() {
 
   function handleDelete(id) {
     axios
-      .delete(`http://localhost:300/deletequn/${id}`)
+      .delete(`https://s47-mayur-capstone-braino.onrender.com/deletequn/${id}`)
       .then((res) => {
         console.log("Response:", res.data);
         setList(list.filter((item) => item._id !== id));

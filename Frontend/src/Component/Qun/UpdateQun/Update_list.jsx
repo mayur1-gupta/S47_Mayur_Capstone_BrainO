@@ -14,7 +14,7 @@ function Update_list() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:300/updatequn/${id}`)
+      .get(`https://s47-mayur-capstone-braino.onrender.com/updatequn/${id}`)
       .then((res) => {
         console.log("Response:", res.data);
         setQun(res.data.Question);
@@ -32,7 +32,7 @@ function Update_list() {
     // formData.append("Answer", Answer);
     // console.log(formData);
     axios
-      .put(`http://localhost:300/updatequn/${id}`, {Question:Qun, Answer:Answer}) 
+      .put(`https://s47-mayur-capstone-braino.onrender.com/updatequn/${id}`, {Question:Qun, Answer:Answer}) 
       .then((res) => {
         console.log("Response:", res.data);
         setQun(res.data.Qun);

@@ -50,7 +50,7 @@ function SignUp() {
     formData.append("Number", Number);
 
     axios
-      .post("http://localhost:300/signup", formData)
+      .post("https://s47-mayur-capstone-braino.onrender.com/signup", formData)
       .then((res) => {
         console.log("Response:", res.data);
         setCookie("Name", res.data.Name);
