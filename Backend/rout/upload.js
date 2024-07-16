@@ -5,7 +5,6 @@ const schema = require('../module/SignUpSchema');
 const uploads = express();
 const fs = require('fs'); 
 const cloudinary = require("../config/Cloudinarys");
-
 uploads.use(express.json());
 
 
@@ -57,51 +56,3 @@ module.exports = uploads;
 
 
 
-
-
-
-// const storage = new CloudinaryStorage({
-//     cloudinary: cloudinary_s,
-//     params: {
-//       folder: 'profile_images',
-//       format: async (req, file) => 'png', // supports promises as well
-//       public_id: (req, file) => Date.now() + '-' + file.originalname,
-//     },
-// });
-
-
-
-
-
-
-
-// const storage = async ( req, res ) => {
-//     const uploadResult = await cloudinary.uploader
-//     .upload(
-//         req.file.path,{
-//             public_id: Date.now()+"-"+req.file.originalname,
-//         }
-//         )
-//         .catch((error) => {
-//             console.log(error);
-//         });
-        
-//         console.log(uploadResult);
-//         const optimizeUrl = cloudinary.url('shoes', {
-//             fetch_format: 'auto',
-//             quality: 'auto'
-//         });
-        
-//         console.log(optimizeUrl);
-        
-//         // Transform the image: auto-crop to square aspect_ratio
-//         const autoCropUrl = cloudinary.url('shoes', {
-//             crop: 'auto',
-//             gravity: 'auto',
-//             width: 500,
-//             height: 500,
-//         });
-        
-//         console.log(autoCropUrl);    
-
-// }
