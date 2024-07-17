@@ -14,7 +14,7 @@ function Update_list() {
 
   useEffect(() => {
     axios
-      .get(`https://s47-mayur-capstone-braino-1.onrender.com/updatequn/${id}`)
+      .get(`https://s47-mayur-capstone-braino.onrender.com/updatequn/${id}`)
       .then((res) => {
         console.log("Response:", res.data);
         setQun(res.data.Question);

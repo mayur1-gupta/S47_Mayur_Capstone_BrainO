@@ -5,7 +5,10 @@ const upload = multer();        // Configure multer to handle FormData
 const connector = require("../cannectors/mongoDB")
 const signupSchema = require("../module/SignUpSchema")
 const bcrypt = require('bcrypt'); 
+const cors = require("cors")
 
+
+signup.use(cors());
 signup.use(express.json());     // Parse JSON bodies
 signup.use(express.urlencoded({ extended: true }));
 

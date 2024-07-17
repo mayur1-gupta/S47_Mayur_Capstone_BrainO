@@ -23,7 +23,7 @@ function QuestionList() {
 
   function handleDelete(id) {
     axios
-      .delete(`https://s47-mayur-capstone-braino-1.onrender.com/deletequn/${id}`)
+      .delete(`https://s47-mayur-capstone-braino.onrender.com/deletequn/${id}`)
       .then((res) => {
         console.log("Response:", res.data);
         setList(list.filter((item) => item._id !== id));

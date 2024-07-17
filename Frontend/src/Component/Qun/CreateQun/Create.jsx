@@ -25,7 +25,7 @@ function QunCreate() {
         formData.append("Answer", Answer);
         
         
-        axios.post(`https://s47-mayur-capstone-braino-1.onrender.com/createQun`, formData)
+        axios.post(`https://s47-mayur-capstone-braino.onrender.com/createQun`, formData)
         .then((res) => {
             console.log("Response:", res.data);
             if(res.data){
