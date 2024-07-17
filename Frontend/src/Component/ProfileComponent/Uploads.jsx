@@ -19,7 +19,7 @@ const ProfileImageUpload = () => {
     formData.append('userId', userId);
     try {
       console.log("here");
-      const res = await axios.post(`https://s47-mayur-capstone-braino-1.onrender.com/upload/${userId}`, formData, {
+      const res = await axios.post(`https://s47-mayur-capstone-braino.onrender.com/upload/${userId}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
