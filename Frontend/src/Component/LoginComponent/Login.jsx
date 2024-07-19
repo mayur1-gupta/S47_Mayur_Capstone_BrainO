@@ -3,6 +3,7 @@ import axios from 'axios'
 import "./Login.css"
 import {useNavigate} from "react-router-dom"
 import { useCookies } from "react-cookie";
+import img1 from "../../../image/im1.png";
 
 function Login() {
     const [Email, setEmail] = useState('')
@@ -51,10 +52,15 @@ function Login() {
   return (
     <div>
         <div className="login-container"> 
+            <div className='login-cont'>
             <h1 className="login-text">Login</h1>
             <input type="text" placeholder='Email' onChange={hendleEmail} className='input_login_email'/>
             <input type="text" placeholder='Password' onChange={hendlePassword} className='input_login_password'/>
             <button onClick={hendleLogin} className="login-btn">Login</button>
+            </div>
+            <div className='login-x'>
+                <img src={img1} alt=""  className='login-img'/>
+            </div>
         </div>
     </div>
   )

@@ -1,51 +1,72 @@
 .login-container{
+    height: 100vh;
+    background-color:#5085A5;
+    display: flex;
+}
+.login-cont{
+    height: 100vh;
+    width: 40%;
+    background-color:#F7F9FB;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    height: 100vh;
-    background-color: #f0f0f0;
-    background-position: 0%;
-    background-size: cover;
+    /* background-position: 0%; */
+    /* background-size: cover; */
 }
 .login-text{
     font-size: 100px;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
+    color: #687864;
+    margin-top: 14%;
 }
 .input_login_email{
-    width: 400px;
+    width: 350px;
     height:55px;
-    margin: 15px 15px 15px 15px;
-    border: 2px solid #333;
+    margin: 35px 15px 15px 15px;
+    border: 2px solid #687864;
     font-size: 20px;
     text-align: center;
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;    
+    font-weight: bold;  
+    color: #5085A5;  
 }
 .input_login_password{
-    width: 400px;
+    width: 350px;
     height:55px;
     margin: 15px 15px 15px 15px;
-    border: 2px solid #333;
+    border: 2px solid #687864;
     font-size: 20px;
     text-align: center;
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+    color: #5085A5;
 }
 .login-btn{
-    width: 410px;
-    height:60px;
-    margin: 10px 10px 10px 10px;
-    border: 2px solid #333;
+    width: 360px;
+    height:55px;
+    margin: 30px 10px 10px 10px;
+    border: 2px solid #687864;
     font-size: 20px;
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+    background-color:#5085A5;
+    color: #F7F9FB;
 }
 .login-btn:hover{
-    background-color: rgba(0, 217, 255, 0.456);
-    color: #333;
+    background-color: #687864;
+    color: #ffffff;
+}
+
+.login-x{
+    margin-left: 19%;
+    margin-top: 9%;
+}
+.login-img{
+    width: 400px;
+    height: 500px;
 }

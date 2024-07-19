@@ -1,29 +1,12 @@
 .profile-container{
-    background-color: #f0f0f0;
+    background-color:#F7F9FB;
     background-position: 0%;
     height: 100vh;
-    /* padding-top: 10%; */
-    /* text-align: center; */
     padding:0%;
 }
 
-.profileDev{
-    background-color: #333; 
-}
-.profile-heading{
-    margin:0%;
-    padding:0%;
-    font-size: 11vh;
-    color:#fdfdfd;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    text-align: center;
-}
 .flex{
     display:flex;
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* justify-content: center; */
 }
 .profileImg{
     width: 60vh;
@@ -31,110 +14,90 @@
     margin-top:9vh;
     margin-left:5vh;
     background-color: rgb(100, 100, 100);
+    border: 10px solid #687864;
     border-radius: 50%; 
-    
-    /* transition: transform 0.3s ease; Smooth transition on hover */
+
 }
 
-/* 
-.circle:hover {
-    transform: scale(1.2); /* Scale up the circle on hover */ 
+.heading6{
+    font-size: 35px;
+    margin-left: 9vw;
+    margin-top: 40px;
+    font-weight: bold;
+    margin-bottom: 0%;
+    color: #31708E;
+    box-shadow: 0px 0px 20px ;
+    text-align: center;
+    width: 400px;
+    height: 50px;
+    border-radius: 20px;
+}
+.name{
+    font-size: 30px;
+    margin-left: 9vw;
+    margin-top: 10px;
+    font-weight: bold;
+    margin-bottom: 0%;
+    color: #687864;
+    text-align: center;
+}
 
+.profileBtn{
+    margin-left:46%;
+}
+.uploadBtn{
+    width: 200px;
+    height: 60px;
+    margin: 10px 10px 10px 10px;
+    border: 2px solid #687864;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold; 
+    background-color:#5085A5;
+    color: #F7F9FB;
+}
 
-.profileInfo{
-   
+.uploadBtn:hover{
+    margin-top: 10px;
+    background-color: #687864;
+    color: #F7F9FB;
 }
-.NameInput{
-    height: 8vh;
-    width: 55vh;
-    margin: 10vh 2vh 4vh 20vh;
-    border: 2px solid #333;
-    font-size: 30px;
-    text-align: center;
-    border-radius: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
-.EmailInput{
-    height: 8vh;
-    width: 55vh;
-    margin: 2vh 2vh 4vh 20vh;
-    border: 2px solid #333;
-    font-size: 30px;
-    text-align: center;
-    border-radius: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
-.NumberInput{
-    height: 8vh;
-    width: 55vh;
-    margin: 2vh 2vh 4vh 20vh;
-    border: 2px solid #333;
-    font-size: 30px;
-    text-align: center;
-    border-radius: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
+
 .EditBtn{
-    height: 10vh;
-    width: 30vh;
-    margin-left: 45%;
-    border: 2px solid #333;
-    font-size: 30px;
+    width: 200px;
+    height: 60px;
+    margin: 10px 10px 10px 10px;
+    border: 2px solid #687864;
+    font-size: 20px;
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    background-color: rgb(132, 231, 125);
-    color: #333;
-    cursor: pointer;
+    font-weight: bold; 
+    background-color:#5085A5;
+    color: #F7F9FB;
 }
-.NameInput2{
-    height: 8vh;
-    width: 55vh;
-    margin-left: 5vh;
-    border: 2px solid #333;
-    font-size: 30px;
-    text-align: center;
-    border-radius: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
-.AgeE{
-    height: 8vh;
-    width: 55vh;
-    margin: 2vh 2vh 4vh 20vh;
-    border: 2px solid #333;
-    font-size: 30px;
-    text-align: center;
-    border-radius: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
-.LogoutBtn{
-    height: 10vh;
-    width: 35vh;
-    margin-left: 5vh;
-    border: 2px solid #333;
-    font-size: 30px;
-    border-radius: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    background-color:#333;
-    color: #f0f0f0;
-    cursor: pointer;
-}
-.HomeBtn{
-    height: 10vh;
-    width: 35vh;
-    margin-left: 5vh;
-    border: 2px solid #333;
-    font-size: 30px;
-    border-radius: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    background-color:#333;
-    color: #f0f0f0;
+.EditBtn:hover{
+    background-color: #687864;
+    color: #F7F9FB;
 }
 
+.loading{
+    width: 50px;
+    height: 50px;
+    border: 5px solid #8FC1E3;
+    border-bottom-color: #687864;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s 10ms;
+    margin-top: 25%;
+    margin-left: 50%;
+}
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    }

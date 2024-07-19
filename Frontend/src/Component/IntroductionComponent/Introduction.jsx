@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Introduction.css"
 import { useNavigate } from "react-router-dom";
-
+import img from "../../../image/im4.png"
 function Introduction() {
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
@@ -14,7 +14,17 @@ function Introduction() {
   return (
     <>
     <div className="welcome-container">
-      <h1 className={isVisible ? "welcome-text visible" : "welcome-text"}>Welcome!</h1>
+      <div className="bar">
+      <p className="start-btn" onClick={() => navigate("/login")}>Profile</p>
+      <p className="start-btn" onClick={() => navigate("/login")}>Qun List</p>
+      <p className="start-btn" onClick={() => navigate("/login") }>Create Qun</p>
+      <p className="start-btn" onClick={() => navigate("/login")}>My Qun</p>
+      <p className="start-btn" onClick={() => navigate("/login")}>Ranking</p>
+      <p className="start-btns" onClick={() => navigate("/signup")}>SignUp</p>
+      <p className="start-btn" onClick={() => navigate("/login")}>LogIn</p>
+      </div>
+      <img src={img} alt="" srcset="" className={isVisible ? "weblogo" : "img"}/>
+      <h1 className={isVisible ? "welcome-text visible" : "welcome-text"}>Welcome To BrainO !</h1>
       <br />
       <p className={isVisible ? "welcome-x margin" : "welcome-x"}>Get ready to experience something amazing.</p>
       <div className={isVisible ? "introduction visible" : "introduction"}>
@@ -33,9 +43,9 @@ function Introduction() {
             <br />
             <br />
             Qun will appear with four options select the option and click on the next button after 6 Qun results will 
-            be displayed on the basis of the results your ranking will be marked as there is one twist one checkpoint one time.
+            be displayed on the basis of the results your ranking will be marked as there is one twist one checkpoint one
             <br />
-            <button className="start-btn" onClick={() => navigate("/signup")}>Start</button>
+            time.
         </p>
       </div>
     </div>

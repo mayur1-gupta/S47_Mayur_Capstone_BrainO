@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Edit_Profile.css";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import img from "../../../image/im4.png"
 function Edit_Profile() {
  const [name, setName] = useState("");
  const [email, setEmail] = useState("");
@@ -32,7 +33,6 @@ function Edit_Profile() {
    formData.append("name", name);
    formData.append("number", number);
    formData.append("age", age);
-   // formData. append ('photo', photo);
    console.log(formData);
    try {
      axios
@@ -50,15 +50,24 @@ function Edit_Profile() {
  
  };
 
+ if (!name) return <div className="loading"></div>;
 
  return (
-   <div className="Edit_Container">
-     <div className="Edit_Img">
+      <div className="Edit_Container">
+        <div className="HomeContainer">
+            <img src={img} alt="" srcset="" className="logo" />
+                <p onClick={() => navigate(`/home/${id}`)} className="Bt">Home</p>
+                <p onClick={() => navigate(`/profile/${id}`)} className="Bt">Profile</p>
+                <p onClick={() => navigate(`/qunList/${id}`)} className="Bt">Qun List</p>
+                <p onClick={() => navigate(`/createQun/${id}`)} className="Bt">Create</p>
+                <p onClick={() => navigate(`/yourQun/${id}`)} className="Bt">My Qun</p>
+                <p onClick={() => navigate(`/ranking/${id}`)} className="Bt">Ranking</p>
+                <p onClick={() => navigate('/login')} className="Bt">Logout</p>   
+            </div> 
+     <div className="Edit">
        <h1 className="Edit_heading">Edit Profile</h1>
        <div className="profile_Img"></div>
-       {/* <button onClick={change_img}>Change Img</button> */}
-       {/* <input type="file" accept="image/*" onChange={handleImageChange} className='EditImg'/> */}
-     </div>
+     
      <div className="EditProfile">
        <h2 className="Edit_tag_head">Name</h2>
        <input
@@ -88,10 +97,11 @@ function Edit_Profile() {
          onChange={(e) => setAge(e.target.value)}
          value={age}
        />
-       <button className="Edit_SubmitBtn" onClick={Edit_SubmitBtn}>
-         Submit
-       </button>
+       </div>
      </div>
+       <p className="Edit_SubmitBtn" onClick={Edit_SubmitBtn}>
+         Submit
+       </p>
    </div>
  );
 }

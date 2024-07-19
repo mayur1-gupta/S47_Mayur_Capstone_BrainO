@@ -8,6 +8,7 @@ const schema = new mongoose.Schema({
     ConfirmPassword : String,
     Number : Number,
     profileImage: String,
+    Age: Number
 })
 
 const signupSchema = new mongoose.model("userSignUpData",schema)

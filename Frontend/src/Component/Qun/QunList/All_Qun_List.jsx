@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./All_Qun_List.css";
+import img from "../../../../image/im4.png";
+import { useNavigate ,useParams} from "react-router-dom";
 
 function QuestionList() {
   const [list, setList] = useState([]);
+
+  const navigate = useNavigate();
+  const {id} = useParams();
 
   useEffect(() => {
     axios
@@ -47,24 +52,58 @@ function QuestionList() {
     });
   }
 
+  if (!list) {
+    return <div>Loading...</div>;
+  }
+  if (!list || list.length === 0) {
+    return (
+    <>
+          <div className="HomeContainer">
+        <img src={img} alt="" srcset="" className="logo" />
+            <p onClick={() => navigate(`/home/${id}`)} className="Bt">Home</p>
+            <p onClick={() => navigate(`/profile/${id}`)} className="Bt">Profile</p>
+            <p onClick={() => navigate(`/qunList/${id}`)} className="Bt">Qun List</p>
+            <p onClick={() => navigate(`/createQun/${id}`)} className="Bt">Create Qnu</p>
+            <p onClick={() => navigate(`/yourQun/${id}`)} className="Bt">My Qun</p>
+            <p onClick={() => navigate(`/ranking/${id}`)} className="Bt">Ranking</p>
+            <p onClick={() => navigate('/login')} className="Bt">Logout</p>   
+        </div>
+    <div className="NoQuestion">No question...</div>
+    {/* <div className="loading"></div> */}
+    </>
+    )
+  }
   return (
-    <div>
-      <div>
-        <h1>Question List</h1>
-        <button>Filter</button>
+    <div className="All_Qun_List">
+      <div className="HomeContainer">
+            <img src={img} alt="" srcset="" className="logo" />
+                <p onClick={() => navigate(`/home/${id}`)} className="Bt">Home</p>
+                <p onClick={() => navigate(`/profile/${id}`)} className="Bt">Profile</p>
+                <p onClick={() => navigate(`/qunList/${id}`)} className="Bt">Qun List</p>
+                <p onClick={() => navigate(`/createQun/${id}`)} className="Bt">Create Qun</p>
+                <p onClick={() => navigate(`/yourQun/${id}`)} className="Bt">My Qun</p>
+                <p onClick={() => navigate(`/ranking/${id}`)} className="Bt">Ranking</p>
+                <p onClick={() => navigate('/login')} className="Bt">Logout</p>   
+      </div> 
+      <div className="Headingcontainer">
+        <h1 className="Heading">Questions List</h1>
+        <button className="Filter" onClick={() => alert("Coming Soon")}>Filter</button>
       </div>
-      <div id="QuestionList">
+      <div className="headingcontainer">
+      <div className="QuestionList">
         {list.map((item, index) => (
-          <div key={index}>
-            <p>{item.Question}</p>
-            <p>{item.Answer}</p>
+          <div key={index} >
+            <h2 className="Number">{index + 1}</h2>
+            <p className="Question">{item.Question}</p>
+            <p className="Answer">{item.Answer}</p>
             <div id="Like">
-                <div><button onClick={()=>handleLove(index)}>{item.love_count} Love ❤️</button></div>
-                <div><button onClick={()=>handleLike(index)}>{item.like_count} Like 👍🏻</button></div>
-                <div><button onClick={()=>handleDislike(index)}>{item.dislike_count} Dislike 👎🏻</button></div>
+                <div><button onClick={()=>handleLove(index)} className="love">{item.love_count} Love ❤️</button></div>
+                <div><button onClick={()=>handleLike(index)} className="like">{item.like_count} Like 👍🏻</button></div>
+                <div><button onClick={()=>handleDislike(index)} className="dislike">{item.dislike_count} Dislike 👎🏻</button></div>
             </div>
           </div>
         ))}
+      </div>
       </div>
     </div>
   );

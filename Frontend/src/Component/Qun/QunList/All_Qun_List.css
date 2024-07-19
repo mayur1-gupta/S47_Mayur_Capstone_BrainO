@@ -1,5 +1,77 @@
+.All_Qun_List{
+    background-color: #F7F9FB;
+}
+
+.Heading{
+    font-size: 60px;
+    color:#5085A5;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-left: 30%;
+    margin-top: 4%;
+}
+
+.Filter{
+    height: 5vh;
+    width: 25vh;
+    margin-left:18%;
+    margin-top: 10%;
+    border: 2px solid #687864;
+    background-color: #8FC1E3;
+    color: #31708E;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.Headingcontainer{
+    display: flex;
+    margin-top: 1%;
+}
+
+.QuestionList{
+    margin-left: 1%;
+}
+
+.Number{
+    font-size: 30px;
+    color:#31708E;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.Question{
+    font-size: 30px;
+    color:#31708E;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    height:fit-content;
+    width:auto;
+}
+
+.Answer{
+    font-size: 25px;
+    color:#687864;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    height:fit-content;
+    width:auto;
+}
 #Like{
     display: flex;
     flex-direction: row;
-    /* justify-content: space-evenly; */
+    justify-content:end;
+    background-color: #F7F9FB;
+}
+
+.love , .like , .dislike{
+    font-size: 20px;
+    color:#31708E;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    height:fit-content;
+    width:auto;
+    margin: 10px 10px 10px 10px;
+    border: 2px solid #687864;
+    border-radius: 10px;
+    text-align: center;
 }
