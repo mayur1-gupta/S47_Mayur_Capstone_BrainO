@@ -4,6 +4,7 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
+import img from '../../../image/im2.png';
 
 
 function SignUp() {
@@ -66,9 +67,12 @@ function SignUp() {
   }
   return (
       <div className="SignUpPage">
+        <div className="background1">
+          <img src={img} className="image1"></img>
+        </div>
         <div className="Formbackground">
           <h1 className="SignupHeading">SignUp</h1>
-          <form className="form" typeof="submit" onSubmit={handleSubmit((e)=>onSubmit(e))}>
+          <form typeof="submit" onSubmit={handleSubmit((e)=>onSubmit(e))}>
             <input
               type="text"
               name="name"
@@ -139,8 +143,8 @@ function SignUp() {
               Submit
             </button>
           </form>
-          <button className="buttonGoogle"><Link>Google</Link></button>
-          <button className="buttonGoogle"><Link to="/login">Login</Link></button>
+          {/* <button className="buttonGoogle"><Link>Google</Link></button> */}
+          <button className="loginButton" onClick={() => navigate("/Login")}>Login</button>
         </div>
       </div>
   );

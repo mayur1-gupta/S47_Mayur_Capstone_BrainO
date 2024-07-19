@@ -3,8 +3,8 @@ import axios from 'axios'
 import './Profile.css'
 import { useNavigate,useParams } from 'react-router-dom'
 import { useCookies } from 'react-cookie';
-
-
+import img from "../../../image/im4.png"
+import img1 from "../../../image/im5.avif"
 
 function Profile() {
   const [name, setName] = useState('');
@@ -50,36 +50,42 @@ function Profile() {
       fetchProfile();
     }, [id, cookies.token, navigate, removeCookie]);
   
-  // if (!photo) return <div>Loading...</div>;
-  // console.log(photo);
+  if (!photo && !name) return <div className='loading'></div>;
 
   return (
     <div className="profile-container">
-      {/* <div>{ photo && <img src= {photo} alt="photo"/>}</div> */}
-      <div className='profileDev'>
-        <h1 className="profile-heading">Profile</h1>
-      </div>
+        <div className="HomeContainer">
+            <img src={img} alt="" srcset="" className="logo" />
+                <p onClick={() => navigate(`/home/${id}`)} className="Bt">Home</p>
+                <p onClick={() => navigate(`/profile/${id}`)} className="Bt">Profile</p>
+                <p onClick={() => navigate(`/qunList/${id}`)} className="Bt">Qun List</p>
+                <p onClick={() => navigate(`/createQun/${id}`)} className="Bt">Create</p>
+                <p onClick={() => navigate(`/yourQun/${id}`)} className="Bt">My Qun</p>
+                <p onClick={() => navigate(`/ranking/${id}`)} className="Bt">Ranking</p>
+                <p onClick={() => navigate('/login')} className="Bt">Logout</p>   
+            </div>  
       <div className="flex">
         <div>
-            <div>{ photo && <img src= {photo} alt="photo" className='profileImg'/>}</div>
-            <button className='uploadBtn' onClick={() => navigate(`/upload/${localStorage.getItem('id')}`)}>Upload</button>
+        {photo ? (
+            <img src={photo} alt="photo" className="profileImg" />
+          ) : (
+            <img src={img1} alt="default" className="profileImg" />
+          )}
         </div>
         <div className='profileInfo'>
-          {/* <h2>Name</h2> */}
-          <input type="text" className='NameInput' value={name}/>
-          {/* <p>{name}</p> */}
-          {/* <h2>Email</h2> */}
-          <input type="text" className='EmailInput' value={email}/>
-          {/* <h2>Number</h2> */}
-          <input type="text" className='NumberInput' value={number}/>
-          {/* <h2>Age</h2> */}
-          <input type="text" className='AgeE' value={age}/>
+          <h2 className='heading6'> Name </h2>
+          <p className='name'>{name}</p>
+          <h2 className='heading6'>Email</h2>
+          <p className='name'>{email}</p>
+          <h2 className='heading6'>Number</h2>
+          <p className='name'>{number}</p>
+          <h2 className='heading6'>Age</h2>
+          <p className='name'>{age}</p>
         </div>
       </div>
-      <div>
+      <div className='profileBtn'>
+        <button className='uploadBtn' onClick={() => navigate(`/upload/${localStorage.getItem('id')}`)}>Upload</button>
         <button className='EditBtn' onClick={() => navigate(`/editprofile/${localStorage.getItem('id')}`)}>Edit</button>
-        <button className="LogoutBtn" onClick={() => navigate('/login')}>Logout</button>
-        <button className="HomeBtn" onClick={() => navigate(`/home/${localStorage.getItem("id")}`)}>Home</button>
       </div>
     </div>
   )

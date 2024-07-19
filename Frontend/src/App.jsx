@@ -14,6 +14,9 @@ import Quiz from './Component/Starting_Quiz/Quiz';
 import Result from './Component/Result/Result'; 
 import Quizz from './Component/Starting_Quiz/Quizz';
 import Uplads from './Component/ProfileComponent/Uploads';
+import Ranking from './Component/Ranking/Ranking';
+import Learn from './Component/Learn/Learn';
+import Start from './Component/Starting_Quiz/Start';
 function App() {
   return (
       <>
@@ -32,6 +35,9 @@ function App() {
           <Route path='/result/:id' element={<Result/>}/>
           <Route path='/quizz/:id' element={<Quizz/>}/>
           <Route path='/upload/:id' element={<Uplads/>}/>
+          <Route path='/ranking/:id' element={<Ranking/>}/>
+          <Route path='/learn/:id' element={<Learn/>}/>
+          <Route path='/start/:id' element={<Start/>}/>
         </Routes>
       </>
   )

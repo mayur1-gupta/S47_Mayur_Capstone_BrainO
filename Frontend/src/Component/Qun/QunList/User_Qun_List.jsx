@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./User_Qun_List.css";
 import { useNavigate , useParams } from "react-router-dom";
-
+import img from "../../../../image/im4.png";
 function QuestionList() {
   const [list, setList] = useState([]);
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ function QuestionList() {
 
   useEffect(() => {
     axios
-      .get(`https://s47-mayur-capstone-braino-1.onrender.com/yourQun/${localStorage.getItem("Email")}`)
+      .get(`https://s47-mayur-capstone-braino.onrender.com/yourQun/${localStorage.getItem("Email")}`)
       .then((res) => {
         console.log("Response:", res.data);
         console.log(localStorage.getItem("Email"));
@@ -20,6 +20,7 @@ function QuestionList() {
         console.error("Error:", err);
       });
   }, []);
+
 
   function handleDelete(id) {
     axios
@@ -34,39 +35,63 @@ function QuestionList() {
   }
 
   function handleUpdate(id) {
-    // localStorage.setItem("Qun", Qun);
-    // localStorage.setItem("Answer", Answer);
     navigate(`/updatequn/${id}`);
 
   }
 
-  return (
-    <div className="User_Qun_List">
-      <div id="User_Qun">
-        <h1 id="List_Heading">Question List</h1>
-      </div>
-      <div id="List_btn">
-        <button onClick={() => navigate(`/createqun/${id}`)} id="Create_btn">Create</button>
-        <button onClick={() => navigate(`/home/${id}`)} id="Home_btn">Home</button>
-      </div>
+  if (!list){
+    return <div>Loading...</div>;
+  }
 
-      <div id="QuestionList">
-        {list.map((item, index) => (
-          <div key={index}>
-            <h3 id="Question">{item.Question}</h3>
-            <p id="Answer">{item.Answer}</p>
-            {/* <input type="text" value={item.Question} />
-            <input type="text" value={item.Answer} /> */}
-            <div id="Like">
-              {/* <div><button onClick={heandle_love}>Love ❤️</button></div>
-                <div><button onClick={heandle_like}>Like 👍🏻</button></div>
-                <div><button onClick={heandle_dislike}>Dislike 👎🏻</button></div> */}
-                <button onClick={() => handleUpdate(item._id)} id="Update_btn">Update</button>
-              <button onClick={() => handleDelete(item._id)} id="Delete_btn">Delete</button>
+  if (!list || list.length === 0) {
+    return (
+    <>
+          <div className="HomeContainer">
+        <img src={img} alt="" srcset="" className="logo" />
+            <p onClick={() => navigate(`/home/${id}`)} className="Bt">Home</p>
+            <p onClick={() => navigate(`/profile/${id}`)} className="Bt">Profile</p>
+            <p onClick={() => navigate(`/qunList/${id}`)} className="Bt">Qun List</p>
+            <p onClick={() => navigate(`/createQun/${id}`)} className="Bt">Create Qnu</p>
+            <p onClick={() => navigate(`/yourQun/${id}`)} className="Bt">My Qun</p>
+            <p onClick={() => navigate(`/ranking/${id}`)} className="Bt">Ranking</p>
+            <p onClick={() => navigate('/login')} className="Bt">Logout</p>   
+        </div>
+    <div className="NoQuestion">No question...</div>
+    </>
+    )
+  }
+
+  return (
+    <div className="All_Qun_List">
+      <div className="HomeContainer">
+        <img src={img} alt="" srcset="" className="logo" />
+            <p onClick={() => navigate(`/home/${id}`)} className="Bt">Home</p>
+            <p onClick={() => navigate(`/profile/${id}`)} className="Bt">Profile</p>
+            <p onClick={() => navigate(`/qunList/${id}`)} className="Bt">Qun List</p>
+            <p onClick={() => navigate(`/createQun/${id}`)} className="Bt">Create Qnu</p>
+            <p onClick={() => navigate(`/yourQun/${id}`)} className="Bt">My Qun</p>
+            <p onClick={() => navigate(`/ranking/${id}`)} className="Bt">Ranking</p>
+            <p onClick={() => navigate('/login')} className="Bt">Logout</p>   
+        </div>  
+        <div>
+        <div className="Headingcontainer">
+          <h1 className="Heading1">My Question </h1>
+          <button className="Filter1">Filter</button>
+        </div>
+
+        <div className="QuestionList">
+          {list.map((item, index) => (
+            <div key={index}>
+              <p className="Question">🏃🏻⠿ {item.Question}</p>
+              <p className="Answer">{item.Answer}</p>
+              <div id="Like">
+                <button onClick={() => handleUpdate(item._id)} className="Update_btn">Update</button>
+                <button onClick={() => handleDelete(item._id)} className="Delete_btn">Delete</button>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+        </div>
     </div>
   );
 }

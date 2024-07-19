@@ -1,0 +1,42 @@
+.Update_btn,.Delete_btn{
+    font-size: 25px;
+    color:#F7F9FB;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border: 2px solid #687864;
+    border-radius: 10px;
+    text-align: center;
+    height: 40px;
+    width: 175px;
+    margin-right: 1%;
+    background-color: #5085A5;
+}
+.Filter1{
+    height: 5vh;
+    width: 23vh;
+    margin-left:16%;
+    margin-top: 10%;
+    border: 2px solid #687864;
+    background-color: #8FC1E3;
+    color: #31708E;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.Heading1{
+    font-size: 60px;
+    color:#5085A5;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-left: 38.5%;
+    margin-top: 4%;
+    width: 444px;
+}
+.NoQuestion{
+    text-align: center;
+    font-size: 50px;    
+    color: #687864;
+    margin-top: 15%;
+    background-color: #F7F9FB;
+}
