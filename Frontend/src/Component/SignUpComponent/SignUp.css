@@ -91,12 +91,9 @@
 .SignupError{
     color: red;
     font-size: 18px;
-    margin-left: 16%;
-}
-.ConfirmPasswordSignupError{
-    color: red;
-    font-size: 18px;
-    margin-left: 12%;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
 }
 
 .background1{
