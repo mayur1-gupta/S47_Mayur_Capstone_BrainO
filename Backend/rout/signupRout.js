@@ -13,20 +13,25 @@ signup.use(express.json());     // Parse JSON bodies
 signup.use(express.urlencoded({ extended: true }));
 
 signup.post("/signup", upload.none(), async(req, res) => {
-    console.log("FormData:", req.body);
         try{
-            const hashPassword = await bcrypt.hash(req.body.Password,10);
-            console.log("hashPassword",hashPassword);
-            req.body.Password = hashPassword
-            console.log("req.body",req.body);
-            signupSchema.create(req.body)
-            .then((data) => {
-                res.send(data);
-            })
-            .catch((err) => {
-                console.error("Error:", err);
-                res.status(500).send("Internal Server Error");
-            });
+            const user = await signupSchema.findOne({Email: req.body.Email});
+            if (user) {
+                res.status(400).send("Email already exists");
+                return;
+            }
+            else{
+                const hashPassword = await bcrypt.hash(req.body.Password,10);
+                req.body.Password = hashPassword
+                signupSchema.create(req.body)
+                .then((data) => {
+                    res.send(data);
+                })
+                .catch((err) => {
+                    console.error("Error:", err);
+                    res.status(500).send("Internal Server Error");
+                });
+            }
+        
         }
         catch(err){
             console.log(err);

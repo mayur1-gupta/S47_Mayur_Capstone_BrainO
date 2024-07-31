@@ -11,6 +11,9 @@ function Introduction() {
     return () => clearTimeout(timeout);
   }, []);
 
+  if(!img){
+    return <div className="loading"></div>;
+  }
   return (
     <>
     <div className="welcome-container">
