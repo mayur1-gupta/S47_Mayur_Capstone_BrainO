@@ -47,7 +47,9 @@ function Login() {
         }
         
 
-
+    if(!img1){
+        return <div className="loading"></div>;
+        }
 
   return (
     <div>
@@ -55,7 +57,7 @@ function Login() {
             <div className='login-cont'>
             <h1 className="login-text">Login</h1>
             <input type="text" placeholder='Email' onChange={hendleEmail} className='input_login_email'/>
-            <input type="text" placeholder='Password' onChange={hendlePassword} className='input_login_password'/>
+            <input type="password" placeholder='Password' onChange={hendlePassword} className='input_login_password'/>
             <button onClick={hendleLogin} className="login-btn">Login</button>
             </div>
             <div className='login-x'>

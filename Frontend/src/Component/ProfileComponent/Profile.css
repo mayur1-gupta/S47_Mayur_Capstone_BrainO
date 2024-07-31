@@ -89,7 +89,7 @@
     border-radius: 50%;
     display: inline-block;
     box-sizing: border-box;
-    animation: rotation 1s 10ms;
+    animation: rotation 1s linear infinite;
     margin-top: 25%;
     margin-left: 50%;
 }
